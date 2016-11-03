@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>[UEL's Day]</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+	
+	<link rel="icon" href="fav-icon.png">
+</head>
+<body>
+	
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+			  <a class="navbar-brand">[UEL's Day]</a>
+			</div>
+		</div>
+	</nav>
+		
+	<div class="container">
+		<div class="row">
+		  	
+			<div class="col-md-5 col-md-offset-1 col-left">
+				<canvas id="canvas" class="thumbnail" >Xin lỗi, trình duyệt bạn không hỗ trợ.</canvas>
+		 		<img style="display: none;" id="source">
+
+		 		<a id="selectImageBtn" class="btn btn-success" onclick="selectFile()" role="button">Chọn hình</a>
+				<a id="downloadBtn" role="button" class="btn btn-info">Tải về</a>
+				
+				<input id="scaleBar" type="range" min="1" max="2" step="0.01"/>
+				<p>Kích thước: <span id="scaleValue">1</span></p>
+			</div>
+
+			<div class="col-md-6 col-md-offset-0">
+				<blockquote>
+					<ul>
+						<li>Bước 1: Chọn ảnh đại diện.</li>
+						<li>Bước 2: Chỉnh ảnh. (kéo ảnh để sửa vị trí / kéo thanh kích thước để phóng to thu nhỏ)</li>
+						<li>Bước 3: Tải ảnh về.</li>
+					</ul>
+				</blockquote>
+				
+				<div class="fb-page" data-href="https://www.facebook.com/qtkd.lienchihoi?fref=ts" data-tabs="timeline" data-width="500" data-height="440" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/qtkd.lienchihoi?fref=ts" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/qtkd.lienchihoi?fref=ts">[https://www.facebook.com/qtkd.lienchihoi?fref=ts]</a></blockquote></div>
+			</div>
+			</div>
+		</div>
+
+		<form>
+			<input style="display:none;" type="file" id="imageFile" accept="image/*" onchange="updateImage()">
+		</form>
+
+	</div>
+
+	<div class="footer">
+		<div class="container">	
+			<div class="meta-info">
+				&copy;
+				<a target="_blank" href="https://luuthevinh.me">about</a>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+	<script src="js/editimage.js"></script>
+
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1021504654629283";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	
+</body>
+</html>
