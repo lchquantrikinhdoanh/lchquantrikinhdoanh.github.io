@@ -4,8 +4,8 @@ var context = canvas.getContext("2d");
 
 var scaleBar = document.getElementById("scaleBar");
 
-var canvasWidth = canvas.width = 1000;
-var canvasHeight = canvas.height = 1000;
+var canvasWidth = canvas.width = 512;
+var canvasHeight = canvas.height = 512;
 
 var minEdge = 0;
 var curScale = 1;
@@ -147,28 +147,29 @@ function downloadFile(button, canvasId, filename) {
 };
 
 document.getElementById('downloadBtn').addEventListener('click', function() {
-    downloadFile(this, "canvas", "vnu_tour_avatar.png");
+    downloadFile(this, "canvas", "avatar_with_frame.png");
 }, false);
 
 
 function drawCurrentImage()
 {
-	if(imagePosX < 0)
+	var offset = 0;
+	if(imagePosX < 0 + offset)
 	{
-		imagePosX = 0;
+		imagePosX = 0 + offset;
 	}
-	else if(imagePosX > img1.width - sWidth)
+	else if(imagePosX > img1.width - sWidth - offset)
 	{
-		imagePosX = img1.width - sWidth;
+		imagePosX = img1.width - sWidth - offset;
 	}
 
-	if(imagePosY < 0)
+	if(imagePosY < 0 + offset)
 	{
-		imagePosY = 0;
+		imagePosY = 0 + offset;
 	}
-	else if(imagePosY > img1.height - sHeight)
+	else if(imagePosY > img1.height - sHeight - offset)
 	{
-		imagePosY = img1.height - sHeight;
+		imagePosY = img1.height - sHeight - offset;
 	}
   
 	// draw image
