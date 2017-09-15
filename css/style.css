@@ -1,46 +1,296 @@
-body {
-  font: 400 16px/1.5 "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
-  background-color: #fdfdfd;
-  -webkit-text-size-adjust: 100%;
+/* ================================================
+Designed by Đinh Bá Hiển
+Email: bahien@sgweb.vn
+================================================ */
+*{
+	box-sizing: border-box;
+}
+body{
+	font: 14px Arial;
+	margin: 0;
+	padding: 0;
+}
+.main-content{
+	position: relative;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#canvas
-{
-	/*width: 500px;
-	height: 500px;
-	margin-bottom: 20px;*/
-	width: 100%;
-	height: auto;
-}
-
-#canvas:hover {
+.cropit-image-preview, .cropit-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	width: 650px;
+	height: 650px;
 	cursor: move;
 }
 
-#scaleBar {
-	margin-top: 20px;
-	margin-bottom: 10px;
+.cropit-image-background {
+	opacity: .2;
+	cursor: auto;
 }
 
-.center {
-	margin: 0 auto;
+.image-size-label {
+	margin-top: 20px;
+	font: 16px Arial;
+	font-weight: bold;
+}
+
+input {
 	display: block;
 }
 
-.footer {
-    height: 50px;
-    margin-top: 20px;
-    background: #f8f8f8;
-    border-top: 1px solid #e7e7e7;
+.export{
+	margin-top: 5px;
 }
 
-.col-left {
-	margin-bottom: 20px;
+#leCanvas{
+	position: absolute;
+	top:0px;
+	pointer-events: none;
 }
 
-.meta-info {
-	float: right;
-	font-size: 10px;
-	margin: 10px;
+.column{
+	float: left;
+	padding-left: 20px;
+}
+
+.column:nth-child(1){
+	width: 60%;
+	padding-right: 20px;
+}
+
+.column:nth-child(2){
+	width: 40%;
+	margin-top: 30px;
+}
+h1{
+    font: 20px Arial;
+    font-weight: bold;
+    color: white ;/*#376db5*/
+    text-align: center;
+    padding: 8px 5px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.cropit-image-input{
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+}
+.change-frame{
+	margin-top: 10px;
+	font: 16px Arial;
+	background: #52a0c7;
+	color: #fff;
+	padding: 5px 0px;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	-webkit-box-shadow: 0 2px #3784aa;
+	box-shadow: 0 2px #3784aa;
+	border: none;
+}
+.select-image-btn{
+	margin-top: 10px;
+	font: 16px Arial;
+	background: #52a0c7;
+	color: #fff;
+	padding: 5px 0px;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	-webkit-box-shadow: 0 2px #3784aa;
+	box-shadow: 0 2px #3784aa;
+}
+
+.export, #dl, .download, .add-text{
+	font-size: 16px;
+	border: none;
+	background: #2fd810;
+	color: #fff;
+	padding: 5px 10px;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	-webkit-box-shadow: 0 2px #05a511;
+	box-shadow: 0 2px #05a511;
+}
+.download{
+	background: #2fd810;
+	-webkit-box-shadow: 0 2px #05a511;
+	box-shadow: 0 2px #05a511;
+    margin-top: 30px;	
+}
+.label-download-or-export{
+	display: block;
+    margin-top: 10px;
+}
+#dl{
+	background: #2FB163;
+}
+
+.note{
+	font: 16px Arial;
+}
+
+#rotate_left, #rotate_right{
+	padding: 7px 10px;
+	font-size: 20px;
+	margin-top: 10px;
+}
+.label-rotate{
+	float: left;
+    line-height: 20px;
+}
+#controls{
+	margin-left: 90px;
+}
+.ob-btn{
+	width: 150px;	
+    border-radius: 10px;
+    line-height: 20px;
+}
+.checkbox input{
+	float: left;
+}
+
+.move_logo{
+	margin-top: 10px;
+}
+.footer{
+    padding-top: 15px;
+    width: 990px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+#stateCombo{
+    font: 16px Arial;
+}
+#upload_background{
+	display: none;
+}
+.image-editor{
+	position: relative;
+    display: inline-block;
+}
+.license{
+	font: 9px Arial;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+}
+button:focus{
+	outline: none;
+}
+.list-text{
+	list-style: none;
+	padding: 0;
+	max-height: 260px;
+    overflow-y: auto;
+    background-color: #6bccf1;
+    padding: 10px;
+}
+.list-text input{
+	height: 25px;
+}
+.list-text li{
+	position: relative;
+	clear: both;
+	margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.list-text li:last-child{
+	border: none;
+}
+.add-text{
+	margin-top: 10px;
+    background: #e91c23; 
+    -webkit-box-shadow: 0 2px #b4316d; 
+    box-shadow: 0 2px #b4316d; 
+}
+.btn-add-text-item{
+	padding: 8px;
+}
+.template-text{
+	display: none;
+}
+.btn-close-text{
+	position: absolute;
+    right: 0;
+}
+.btn-picker-color, .btn-picker-border-color{
+	width: 20px;
+    height: 20px;
+    background-color: black;
+    border: none;
+    float: left;
+    margin: 5px;
+    border: 1px solid;
+}
+input.text-content{
+	width: 150px;
+	float: left;
+}
+input.text-size{
+	width: 40px;
+}
+input.text-color{
+	visibility: hidden;
+	height: 1px;
+	width: 1px;
+}
+input.border-color{
+	float: left;
+	clear: both;
+}
+input.border-size{
+	float: left;
+}
+.label-color{
+	float: left;
+    margin-top: 10px;
+}
+.label-checkbox{
+	float: left;
+	margin-top: 8px;
+    margin-left: 3px;
+}
+.label-border{
+	clear: both;
+	margin-top: 5px;
+}
+.btn-picker-border-color{
+	margin-top: 0;
+	background-color: red;
+}
+.area-border{
+	display: none;
+}
+.choose-font{
+	width: 150px;
+    margin-top: 10px;
+    height: 25px;
+    display: block;
 }

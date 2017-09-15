@@ -1,0 +1,48 @@
+/*Font Vietnamese*/
+@font-face {
+    font-family: 'UNITapviet_0_ly';
+    src: url('../font/UNITapviet_0_ly.woff');
+}
+@font-face {
+    font-family: 'UTMFlavour';
+    src: url('../font/UTMFlavour.woff');
+}
+
+
+/*Font Unicode*/
+@font-face {
+    font-family: 'UVNBoQuen';
+    src: url('../font/UVNBoQuen.woff');
+}
+@font-face {
+    font-family: 'UVNBucThu';
+    src: url('../font/UVNBucThu.woff');
+}
+@font-face {
+    font-family: 'UVNBinhDuong';
+    src: url('../font/UVNBinhDuong.woff');
+}
+@font-face {
+    font-family: 'UVNBenXuan_R';
+    src: url('../font/UVNBenXuan_R.woff');
+}
+@font-face {
+    font-family: 'UVNBanhMi';
+    src: url('../font/UVNBanhMi.woff');
+}
+@font-face {
+    font-family: 'UVNBachDang_R';
+    src: url('../font/UVNBachDang_R.woff');
+}
+@font-face {
+    font-family: 'Roboto-Black';
+    src: url('../font/Roboto-Black.woff');
+}
+@font-face {
+    font-family: 'UVNBaiSau_R';
+    src: url('../font/UVNBaiSau_R.woff');
+}
+@font-face {
+    font-family: 'NotoSerif-Regular';
+    src: url('../font/NotoSerif-Regular.woff');
+}
